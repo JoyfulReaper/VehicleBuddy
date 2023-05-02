@@ -7,7 +7,7 @@
     [NumberOfDoors] INT NOT NULL, 
     [NumberOfPassengers] INT NOT NULL, 
     [NumberOfCylinders] INT NOT NULL, 
-    [StartYear] VARCHAR(20) NOT NULL, 
-    [EndYear] VARCHAR(20) NULL, 
+    [StartYear] DATETIME2 NOT NULL, 
+    [EndYear] DATETIME2 NULL, 
     CONSTRAINT [FK_Package_FuelType] FOREIGN KEY ([FuelTypeId]) REFERENCES [FuelType]([FuelTypeId])
 )

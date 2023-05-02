@@ -15,4 +15,8 @@
     <ProjectReference Include="..\Shared\VehicleBuddy.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Repositories\Interfaces\" />
+  </ItemGroup>
+
 </Project>

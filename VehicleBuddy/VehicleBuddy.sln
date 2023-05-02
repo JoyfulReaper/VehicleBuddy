@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleBuddy.Server", "VehicleBuddy\Server\VehicleBuddy.Server.csproj", "{E9E17D48-D1C1-48E4-A5F0-AB50A36DC74C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleBuddy.Server", "VehicleBuddy\Server\VehicleBuddy.Server.csproj", "{E9E17D48-D1C1-48E4-A5F0-AB50A36DC74C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleBuddy.Client", "VehicleBuddy\Client\VehicleBuddy.Client.csproj", "{BDDE2011-F673-4DDF-8716-E917DF9A91EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleBuddy.Client", "VehicleBuddy\Client\VehicleBuddy.Client.csproj", "{BDDE2011-F673-4DDF-8716-E917DF9A91EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleBuddy.Shared", "VehicleBuddy\Shared\VehicleBuddy.Shared.csproj", "{293E5743-85CA-444E-9C15-FB096D8B1817}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleBuddy.Shared", "VehicleBuddy\Shared\VehicleBuddy.Shared.csproj", "{293E5743-85CA-444E-9C15-FB096D8B1817}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "VehicleBuddy.Database", "VehicleBuddy.Database\VehicleBuddy.Database.sqlproj", "{C18DACF9-1DF3-45C7-A744-31FEED7AF921}"
 EndProject
