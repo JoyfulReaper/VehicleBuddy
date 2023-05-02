@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="20a58df7-845c-4b5f-8379-d595a7673d79" ChangeDateTime="05/01/2023 23:33:01">
+    <Property Name="ElementName" Value="[dbo].[Vehicle].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Vehicle]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="VehicleId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="3e761d1e-8619-4638-aefc-4b967c6c32d7" ChangeDateTime="05/01/2023 23:37:41">
+    <Property Name="ElementName" Value="[dbo].[Make].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Make]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="MakeId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="735c643a-f783-4c3a-9caf-583ef3ce203e" ChangeDateTime="05/01/2023 23:40:34">
+    <Property Name="ElementName" Value="[dbo].[Model].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Model]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ModelId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="2f9232f0-77c5-4106-aae4-cd75963e1098" ChangeDateTime="05/01/2023 23:44:16">
+    <Property Name="ElementName" Value="[dbo].[ModelPackage].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ModelPackage]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ModelPackageId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="01546393-aa9c-46ad-b88e-6f2d4f073d49" ChangeDateTime="05/01/2023 23:46:01">
+    <Property Name="ElementName" Value="[dbo].[FuelType].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[FuelType]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="FuelTypeId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a50988fd-6019-4058-8c6c-00668446c154" ChangeDateTime="05/01/2023 23:47:15">
+    <Property Name="ElementName" Value="[dbo].[Package].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Package]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="PackageId" />
+  </Operation>
+</Operations>
