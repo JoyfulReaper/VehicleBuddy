@@ -1,10 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace VehicleBuddy.Server.Models;
+namespace VehicleBuddy.Shared.Contracts.Make;
 
-public class Make
+public class MakeResponse
 {
-    [Key]
     public int MakeId { get; set; }
 
     [MaxLength(50)]
@@ -20,5 +19,4 @@ public class Make
     [MaxLength(150)]
     [EmailAddress]
     public string CustomerSupportEmailAddress { get; set; } = default!;
-
 }

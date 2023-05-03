@@ -24,4 +24,8 @@ public class Package
     public DateTime StartYear { get; set; }
 
     public DateTime? EndYear { get; set; }
+
+    ////////////
+    
+    public FuelType? FuelType { get; set; }
 }

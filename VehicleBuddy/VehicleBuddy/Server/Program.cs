@@ -1,19 +1,13 @@
-using Microsoft.AspNetCore.ResponseCompression;
-using VehicleBuddy.Server.Data;
-using VehicleBuddy.Server.Data.Interfaces;
-using VehicleBuddy.Server.Repositories;
-using VehicleBuddy.Server.Repositories.Interfaces;
+using VehicleBuddy.Server;
 
 var builder = WebApplication.CreateBuilder(args);
 {
     builder.Services.AddControllersWithViews();
     builder.Services.AddRazorPages();
+    builder.Services.AddAutoMapper(typeof(Program));
 
-    builder.Services.AddTransient<IDbConnectionFactory, SqlConnectionFactory>();
-    builder.Services.AddTransient<IVehicleRepository, VehicleRepository>();
+    builder.Services.AddVehicleBuddy(builder.Configuration);
 }
-
-
 
 var app = builder.Build();
 {
