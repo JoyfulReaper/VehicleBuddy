@@ -23,26 +23,66 @@ public class VehicleRepository : IVehicleRepository
     public async Task<Vehicle?> GetAsync(int vehicleId)
     {
         using IDbConnection connection = _dbConnectionFactory.CreateConnection();
-        var result = await connection.QuerySingleOrDefaultAsync<Vehicle>("spVehicle_GetById", new { VehicleId = vehicleId }, commandType: CommandType.StoredProcedure);
-        return result;
+        var result = await connection.QueryAsync<Vehicle, Make, Model, Package, Vehicle>(
+           "spVehicle_GetById",
+           (v, m, mo, p) =>
+           {
+               v.Make = m;
+               v.Model = mo;
+               v.Package = p;
+               return v;
+           },
+           new
+           {
+               VehicleId = vehicleId
+           },
+           splitOn: "MakeId,Model,Package",
+           commandType: CommandType.StoredProcedure);
+
+        return result.SingleOrDefault();
     }
 
     public async Task<Vehicle?> GetByVinAsync(string vin, bool includeSold)
     {
+        // TODO: Consider the possibility of duplicated VINs
+        // Kyle's Opinion - We should just return a list
+
         using IDbConnection connection = _dbConnectionFactory.CreateConnection();
-        var result = await connection.QuerySingleOrDefaultAsync<Vehicle>("spVehicle_GetByVin", new
-        {
-            VIN = vin,
-            IncludeSold = includeSold
-        }, commandType: CommandType.StoredProcedure);
-        return result;
+        var result = await connection.QueryAsync<Vehicle, Make, Model, Package, Vehicle>(
+            "spVehicle_GetByVin",
+            (v, m, mo, p) =>
+            {
+                v.Make = m;
+                v.Model = mo;
+                v.Package = p;
+                return v;
+            },
+            new
+            {
+                VIN = vin,
+                IncludeSold = includeSold
+            },
+            splitOn: "MakeId,Model,Package", 
+            commandType: CommandType.StoredProcedure);
+
+        return result.SingleOrDefault();
     }
 
     public async Task<IList<Vehicle>> GetAllAsync()
     {
         using IDbConnection connection = _dbConnectionFactory.CreateConnection();
-        var result = await connection.QueryAsync<Vehicle>("spVehicle_GetAll", commandType: CommandType.StoredProcedure);
-        return result.AsList();
+        var allVehicles = await connection.QueryAsync<Vehicle, Make, Model, Package, Vehicle>(
+            "spVehicle_GetAll",
+            (v, m, mo, p) =>
+        {
+            v.Make = m;
+            v.Model = mo;
+            v.Package = p;
+            return v;
+        },
+        splitOn: "MakeId,Model,Package", commandType: CommandType.StoredProcedure);
+
+        return allVehicles.AsList();
     }
 
     public async Task SaveAsync(Vehicle vehicle)
