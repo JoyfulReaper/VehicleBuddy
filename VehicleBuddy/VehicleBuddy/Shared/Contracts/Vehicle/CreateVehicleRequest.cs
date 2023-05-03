@@ -1,28 +1,31 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace VehicleBuddy.Client.Models;
+namespace VehicleBuddy.Shared.Contracts.Vehicle;
 
-public class Vehicle
+public class CreateVehicleRequest
 {
-    [Key]
-    public int VehicleId { get; set; }
-    [ForeignKey("MakeId")]
     public int MakeId { get; set; }
-    [ForeignKey("ModelId")]
+
     public int ModelId { get; set; }
-    [ForeignKey("PackageId")]
+
     public int PackageId { get; set; }
+
     [MaxLength(20)]
+    [Required]
     public string VIN { get; set; } = default!;
+
+    [Required]
     public int Year { get; set; }
+
+    [Required]
     public bool IsAutomatic { get; set; }
+
     [MaxLength(50)]
+    [Required]
     public string Color { get; set; } = default!;
 
+    [Required]
     public DateTime DateAcquired { get; set; }
 
-    public DateTime DateSold { get; set; }
-
-
+    public int? Mileage { get; set; }
 }

@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="Dapper" Version="2.0.123" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="7.0.5" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.1" />
@@ -15,10 +16,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Client\VehicleBuddy.Client.csproj" />
     <ProjectReference Include="..\Shared\VehicleBuddy.Shared.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
   </ItemGroup>
 
 
