@@ -38,4 +38,6 @@ public class Vehicle
     public Make? Make { get; set; }
     public Model? Model { get; set; }
     public Package? Package { get; set; }
+
+    public List<Image> Images { get; set; } = new();
 }

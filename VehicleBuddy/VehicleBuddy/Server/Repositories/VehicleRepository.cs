@@ -90,4 +90,10 @@ public class VehicleRepository : IVehicleRepository
         using IDbConnection connection = _dbConnectionFactory.CreateConnection();
         var id = await connection.QuerySingleAsync<int>("spVehicle_Upsert", vehicle, commandType: CommandType.StoredProcedure);
     }
+
+    public async Task SaveImagesAsync(List<Image> images)
+    {
+        using IDbConnection connection = _dbConnectionFactory.CreateConnection();
+        var result = await connection.QueryAsync<Image>("spVehicle_Upsert", images, commandType: CommandType.StoredProcedure);
+    }
 }

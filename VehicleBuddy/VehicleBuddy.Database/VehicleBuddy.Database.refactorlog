@@ -42,4 +42,25 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="PackageId" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="fb79feea-d0d8-45f0-9326-8316d3b9d6b3" ChangeDateTime="05/04/2023 22:08:16">
+    <Property Name="ElementName" Value="[dbo].[Vehicle].[ImageTable]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Vehicle]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ImageTableId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ca85e7f9-1951-4d02-a51f-523f55db543a" ChangeDateTime="05/04/2023 22:09:49">
+    <Property Name="ElementName" Value="[dbo].[ImageTable].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ImageTable]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ImageTableId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b17f733c-0134-4f43-afae-7c1203f795b7" ChangeDateTime="05/04/2023 22:55:19">
+    <Property Name="ElementName" Value="[dbo].[ImageTable].[ImageTableId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ImageTable]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ImageId" />
+  </Operation>
 </Operations>

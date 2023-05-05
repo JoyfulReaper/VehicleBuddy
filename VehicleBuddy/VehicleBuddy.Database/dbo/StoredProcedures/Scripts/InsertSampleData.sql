@@ -1,15 +1,6 @@
-﻿CREATE DATABASE VehicleBuddy;
-GO
-
-USE VehicleBuddy
+﻿USE VehicleBuddy
 GO
 -- Fuel Types to be inserted into the DB
-
-CREATE TABLE FuelType 
-(
-	FuelTypeId int,
-	[Type] varchar(50)
-)
 
 INSERT INTO FuelType 
 (
@@ -24,15 +15,6 @@ VALUES
 	(4, 'Other')
 
 -- Make types to be inserted into the DB
-
-CREATE TABLE Make
-(
-	MakeId int,
-	[Name] varchar(50),
-	Country varchar(50),
-	CustomerSupportEmailAddress nvarchar(50),
-	CustomerSupportPhoneNumber nvarchar(150)
-)
 
 INSERT INTO Make
 (
@@ -56,12 +38,6 @@ VALUES
 
 -- Model types to be inserted into the DB
 
-CREATE TABLE Model
-(
-	ModelId int,
-	[Name] varchar(50)
-)
-
 INSERT INTO Model
 (
 	ModelId,
@@ -81,23 +57,12 @@ VALUES
 
 -- Package types to be inserted into the DB
 
-CREATE TABLE Package
-(
-	PackageId int,
-	FuelTypeId int,
-	is4WD bit,
-	isHatchback bit,
-	NumberOfDoors int,
-	NumberOfPassengers int,
-	NumberOfCylinders int,
-	StartYear datetime2(7),
-	EndYear datetime2(7)
-)
 
 INSERT INTO Package
 (
 	PackageId,
 	FuelTypeId,
+	[Name],
 	is4WD,
 	isHatchback,
 	NumberOfDoors,
@@ -107,34 +72,19 @@ INSERT INTO Package
 	EndYear
 )
 VALUES
-	(1, 1, 0, 1, 4, 5, 4, '2015-05-02 13:45:30.1234567', '2019-05-02 13:45:30.1234567'),
-	(2, 2, 1, 0, 2, 2, 2, '2018-05-02 13:45:30.1234567', NULL),
-	(3, 3, 0, 1, 4, 7, 6, '2016-05-02 13:45:30.1234567', '2020-05-02 13:45:30.1234567'),
-	(4, 4, 1, 0, 4, 5, 6, '2017-05-02 13:45:30.1234567', NULL),
-	(5, 1, 1, 0, 4, 5, 4, '2019-05-02 13:45:30.1234567', '2023-05-02 13:45:30.1234567'),
-	(6, 3, 0, 0, 4, 5, 8, '2014-05-02 13:45:30.1234567', '2018-05-02 13:45:30.1234567'),
-	(7, 2, 1, 1, 2, 4, 3, '2015-05-02 13:45:30.1234567', '2017-05-02 13:45:30.1234567'),
-	(8, 4, 0, 1, 4, 7, 8, '2018-05-02 13:45:30.1234567', NULL),
-	(9, 3, 1, 0, 4, 5, 4, '2020-05-02 13:45:30.1234567', NULL),
-	(10, 1, 0, 0, 2, 2, 3, '2016-05-02 13:45:30.1234567', '2019-05-02 13:45:30.1234567');
+	(1, 1, 'Jordan', 0, 1, 4, 5, 4, '2015-05-02 13:45:30.1234567', '2019-05-02 13:45:30.1234567'),
+	(2, 2, 'Jordan', 1, 0, 2, 2, 2, '2018-05-02 13:45:30.1234567', NULL),
+	(3, 3, 'Jordan', 0, 1, 4, 7, 6, '2016-05-02 13:45:30.1234567', '2020-05-02 13:45:30.1234567'),
+	(4, 4, 'Jordan', 1, 0, 4, 5, 6, '2017-05-02 13:45:30.1234567', NULL),
+	(5, 1, 'Jordan', 1, 0, 4, 5, 4, '2019-05-02 13:45:30.1234567', '2023-05-02 13:45:30.1234567'),
+	(6, 3, 'Jordan', 0, 0, 4, 5, 8, '2014-05-02 13:45:30.1234567', '2018-05-02 13:45:30.1234567'),
+	(7, 2, 'Jordan', 1, 1, 2, 4, 3, '2015-05-02 13:45:30.1234567', '2017-05-02 13:45:30.1234567'),
+	(8, 4, 'Jordan', 0, 1, 4, 7, 8, '2018-05-02 13:45:30.1234567', NULL),
+	(9, 3, 'Jordan', 1, 0, 4, 5, 4, '2020-05-02 13:45:30.1234567', NULL),
+	(10, 1,'Jordan',  0, 0, 2, 2, 3, '2016-05-02 13:45:30.1234567', '2019-05-02 13:45:30.1234567');
 
 -- Vehicle values to be inserted into the DB
 
-CREATE TABLE Vehicle
-(
-	VehicleId int,
-	MakeId int,
-	ModelId int,
-	PackageId int,
-	VIN varchar(20),
-	[Year] int,
-	isAutomatic bit,
-	Color varchar(50),
-	DateDeleted datetime2(7),
-	DateSold datetime2(7),
-	DateAcquired datetime2(7),
-	Mileage int
-)
 
 INSERT INTO Vehicle
 (

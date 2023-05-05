@@ -60,6 +60,7 @@
     <Folder Include="dbo\Tables" />
     <Folder Include="dbo\StoredProcedures" />
     <Folder Include="dbo\StoredProcedures\Scripts" />
+    <Folder Include="dbo\TVPs" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Vehicle.sql" />
@@ -72,11 +73,22 @@
     <Build Include="dbo\StoredProcedures\spVehicle_GetAll.sql" />
     <Build Include="dbo\StoredProcedures\spVehicle_GetById.sql" />
     <Build Include="dbo\StoredProcedures\spVehicle_GetByVin.sql" />
+    <Build Include="dbo\Tables\Image.sql" />
+    <Build Include="dbo\StoredProcedures\spMake_GetById.sql" />
+    <Build Include="dbo\StoredProcedures\spMake_GetAll.sql" />
+    <Build Include="dbo\StoredProcedures\spMake_Upsert.sql" />
+    <Build Include="dbo\StoredProcedures\spModel_GetById.sql" />
+    <Build Include="dbo\StoredProcedures\spModel_GetAll.sql" />
+    <Build Include="dbo\StoredProcedures\spModel_Upsert.sql" />
+    <Build Include="dbo\StoredProcedures\spPackage_GetById.sql" />
+    <Build Include="dbo\StoredProcedures\spPackage_GetAll.sql" />
+    <Build Include="dbo\StoredProcedures\spPackage_Upsert.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="VehicleBuddy.Database.refactorlog" />
   </ItemGroup>
   <ItemGroup>
     <None Include="dbo\StoredProcedures\Scripts\InsertSampleData.sql" />
+    <PreDeploy Include="dbo\TVPs\ImageType.sql" />
   </ItemGroup>
 </Project>

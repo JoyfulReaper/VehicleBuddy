@@ -1,7 +1,8 @@
 ﻿CREATE TABLE [dbo].[Package]
 (
 	[PackageId] INT NOT NULL PRIMARY KEY IDENTITY, 
-    [FuelTypeId] INT NOT NULL, 
+    [FuelTypeId] INT NOT NULL,
+    [Name] varchar(50) NOT NULL,
     [is4WD] BIT NOT NULL, 
     [isHatchback] BIT NOT NULL, 
     [NumberOfDoors] INT NOT NULL, 
