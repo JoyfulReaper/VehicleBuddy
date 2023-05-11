@@ -11,6 +11,7 @@ CREATE TYPE ImageType
 /* Create a procedure to receive data for the table-valued parameter. */
 
 
+
 --CREATE PROCEDURE dbo. usp_InsertProductionLocation
 --   @TVP LocationTableType READONLY
 --      AS
