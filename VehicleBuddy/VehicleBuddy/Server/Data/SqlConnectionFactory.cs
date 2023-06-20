@@ -15,7 +15,7 @@ public class SqlConnectionFactory : IDbConnectionFactory
 
     public IDbConnection CreateConnection()
     {
-        var connectionString = _config.GetConnectionString("DefaultConnection");
+        var connectionString = _config.GetConnectionString("VehicleBuddy");
         return new SqlConnection(connectionString);
     }
 }

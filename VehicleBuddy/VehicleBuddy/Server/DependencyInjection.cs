@@ -13,6 +13,10 @@ public static class DependencyInjection
     {
         services.AddTransient<IDbConnectionFactory, SqlConnectionFactory>();
         services.AddTransient<IVehicleRepository, VehicleRepository>();
+        services.AddTransient<IPackageRepository, PackageRepository>();
+        services.AddTransient<IModelRepository, ModelRepository>();
+        services.AddTransient<IMakeRepository, MakeRepository>();
+        services.AddTransient<IFuelTypeRepository, FuelTypeRepository>();
 
         return services;
     }

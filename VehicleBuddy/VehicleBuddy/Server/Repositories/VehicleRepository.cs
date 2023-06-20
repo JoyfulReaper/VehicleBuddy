@@ -88,12 +88,35 @@ public class VehicleRepository : IVehicleRepository
     public async Task SaveAsync(Vehicle vehicle)
     {
         using IDbConnection connection = _dbConnectionFactory.CreateConnection();
-        var id = await connection.QuerySingleAsync<int>("spVehicle_Upsert", vehicle, commandType: CommandType.StoredProcedure);
+        var id = await connection.QuerySingleAsync<int>("spVehicle_Upsert", 
+            new { 
+                vehicle.VehicleId,
+                vehicle.MakeId,
+                vehicle.ModelId,
+                vehicle.PackageId,
+                vehicle.VIN,
+                vehicle.Year,
+                vehicle.IsAutomatic,
+                vehicle.Color,
+                vehicle.DateAcquired,
+                vehicle.DateSold,
+                vehicle.Mileage
+            }, commandType: CommandType.StoredProcedure);
+        vehicle.VehicleId = id;
+
     }
 
     public async Task SaveImagesAsync(List<Image> images)
     {
         using IDbConnection connection = _dbConnectionFactory.CreateConnection();
-        var result = await connection.QueryAsync<Image>("spVehicle_Upsert", images, commandType: CommandType.StoredProcedure);
+        var result = await connection.QueryAsync<Image>("spVehicle_ImageUpload", images, commandType: CommandType.StoredProcedure);
     }
+
+    public async Task DeleteAsync(int vehicleId)
+    {
+        using IDbConnection connection = _dbConnectionFactory.CreateConnection();
+        await connection.ExecuteAsync("spVehicle_Delete", vehicleId, commandType: CommandType.StoredProcedure);
+
+    }
+
 }

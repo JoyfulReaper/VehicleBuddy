@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{c18dacf9-1df3-45c7-a744-31feed7af921}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql150DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -83,12 +83,20 @@
     <Build Include="dbo\StoredProcedures\spPackage_GetById.sql" />
     <Build Include="dbo\StoredProcedures\spPackage_GetAll.sql" />
     <Build Include="dbo\StoredProcedures\spPackage_Upsert.sql" />
+    <Build Include="dbo\StoredProcedures\spVehicle_ImageUpload.sql" />
+    <Build Include="dbo\TVPs\ImageType.sql" />
+    <Build Include="dbo\StoredProcedures\spVehicle_Delete.sql" />
+    <Build Include="dbo\StoredProcedures\spFuelType_GetAll.sql" />
+    <Build Include="dbo\StoredProcedures\spFuelType_Get.sql" />
+    <Build Include="dbo\StoredProcedures\spFuelType_Delete.sql" />
+    <Build Include="dbo\StoredProcedures\spFuelType_Upsert.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="VehicleBuddy.Database.refactorlog" />
   </ItemGroup>
   <ItemGroup>
     <None Include="dbo\StoredProcedures\Scripts\InsertSampleData.sql" />
-    <PreDeploy Include="dbo\TVPs\ImageType.sql" />
+    <None Include="VehicleBuddy.Database.publish.xml" />
+    <None Include="VehicleBuddy_1.Database.publish.xml" />
   </ItemGroup>
 </Project>
