@@ -60,22 +60,22 @@ public class VehicleController : ControllerBase
             return StatusCode(StatusCodes.Status500InternalServerError);
         }
 
-        return CreatedAtAction(nameof(GetVehicleById), _mapper.Map<VehicleResponse>(savedVehicle));
+        return CreatedAtAction(nameof(GetVehicleById), new { id = savedVehicle.VehicleId}, _mapper.Map<VehicleResponse>(savedVehicle));
     }
 
     [HttpPut]
-    public async Task<ActionResult<VehicleResponse>> UpdateVehicle(VehicleResponse vehicleResponse)
+    public async Task<ActionResult<VehicleResponse>> UpdateVehicle(UpdateVehicleRequest vehicleUpdateRequest)
     {
-        await _vehicleRepository.SaveAsync(_mapper.Map<Vehicle>(vehicleResponse));
-        var vehicle = _vehicleRepository.GetAsync(vehicleResponse.VehicleId);
+        await _vehicleRepository.SaveAsync(_mapper.Map<Vehicle>(vehicleUpdateRequest));
+        var vehicle = await _vehicleRepository.GetAsync(vehicleUpdateRequest.VehicleId);
 
         return vehicle == null ? NotFound() : Ok(_mapper.Map<VehicleResponse>(vehicle));
     }
 
-    [HttpDelete]
-    public async Task<IActionResult> DeleteVehicle(VehicleResponse vehicleResponse)
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteVehicle(int vehicleId)
     { 
-        await _vehicleRepository.DeleteAsync(vehicleResponse.VehicleId);
+        await _vehicleRepository.DeleteAsync(vehicleId);
         return NoContent();
     }
 

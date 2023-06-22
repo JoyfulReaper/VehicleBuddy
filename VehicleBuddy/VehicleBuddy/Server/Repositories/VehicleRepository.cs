@@ -62,7 +62,7 @@ public class VehicleRepository : IVehicleRepository
                 VIN = vin,
                 IncludeSold = includeSold
             },
-            splitOn: "MakeId,Model,Package", 
+            splitOn: "MakeId,ModelId,PackageId", 
             commandType: CommandType.StoredProcedure);
 
         return result.SingleOrDefault();
@@ -80,7 +80,7 @@ public class VehicleRepository : IVehicleRepository
             v.Package = p;
             return v;
         },
-        splitOn: "MakeId,Model,Package", commandType: CommandType.StoredProcedure);
+        splitOn: "MakeId,ModelId,PackageId", commandType: CommandType.StoredProcedure);
 
         return allVehicles.AsList();
     }

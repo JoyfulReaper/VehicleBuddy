@@ -7,9 +7,9 @@ BEGIN
 		mo.*,
 		p.*
 	FROM 
-		dbo.Vehicle v INNER JOIN
-		dbo.Make m ON v.MakeId = m.MakeId INNER JOIN
-		dbo.Model mo ON v.ModelId = mo.ModelId INNER JOIN
+		dbo.Vehicle v LEFT JOIN
+		dbo.Make m ON v.MakeId = m.MakeId LEFT JOIN
+		dbo.Model mo ON v.ModelId = mo.ModelId LEFT JOIN
 		dbo.Package p ON v.PackageId = p.PackageId
 
 	WHERE 

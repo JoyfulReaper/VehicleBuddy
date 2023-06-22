@@ -13,5 +13,8 @@ public class VehicleProfile : Profile
             .ForMember(dest => dest.Model, opt => opt.MapFrom(src => src.Model))
             .ForMember(dest => dest.Package, opt => opt.MapFrom(src => src.Package));
         CreateMap<CreateVehicleRequest, Vehicle>();
+        CreateMap<UpdateVehicleRequest, Vehicle>();
+        CreateMap<Vehicle, UpdateVehicleRequest>();
+
     }
 }

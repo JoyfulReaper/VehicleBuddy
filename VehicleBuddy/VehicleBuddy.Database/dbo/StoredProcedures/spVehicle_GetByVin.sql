@@ -3,18 +3,15 @@
 	@IncludeSold BIT = 0
 AS
 BEGIN
-	SELECT 
-		v.*,
-		m.*,
-		mo.*,
-		p.*
-	FROM 
-		dbo.Vehicle v INNER JOIN
-		dbo.Make m ON v.MakeId = v.MakeId INNER JOIN
-		dbo.Model mo ON v.ModelId = mo.ModelId INNER JOIN
-		dbo.Package p ON v.PackageId = p.PackageId
+	SELECT
+	* 
+	FROM
+		Vehicle v LEFT JOIN
+		Make m on m.MakeId = v.MakeId LEFT JOIN
+		Model mo on mo.ModelId = v.ModelId LEFT JOIN
+		Package p on p.PackageId = v.PackageId
 	WHERE 
-		VIN = @VIN
+		v.VIN = @VIN
 	AND DateDeleted IS NULL
 	AND (@IncludeSold = 1 OR DateSold IS NULL)
 END
