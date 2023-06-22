@@ -36,7 +36,7 @@ public class VehicleRepository : IVehicleRepository
            {
                VehicleId = vehicleId
            },
-           splitOn: "MakeId,Model,Package",
+           splitOn: "MakeId,ModelId,PackageId",
            commandType: CommandType.StoredProcedure);
 
         return result.SingleOrDefault();
