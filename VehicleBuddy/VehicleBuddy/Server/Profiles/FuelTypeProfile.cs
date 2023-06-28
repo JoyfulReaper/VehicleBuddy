@@ -9,5 +9,7 @@ public class FuelTypeProfile : Profile
     public FuelTypeProfile()
     {
         CreateMap<FuelType, FuelTypeResponse>();
+        CreateMap<CreateFuelTypeRequest, FuelType>();
+        CreateMap<UpdateFuelTypeRequest, FuelType>();
     }
 }

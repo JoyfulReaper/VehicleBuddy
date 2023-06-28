@@ -115,7 +115,7 @@ public class VehicleRepository : IVehicleRepository
     public async Task DeleteAsync(int vehicleId)
     {
         using IDbConnection connection = _dbConnectionFactory.CreateConnection();
-        await connection.ExecuteAsync("spVehicle_Delete", vehicleId, commandType: CommandType.StoredProcedure);
+        await connection.ExecuteAsync("spVehicle_Delete", new { vehicleId = vehicleId}, commandType: CommandType.StoredProcedure);
 
     }
 

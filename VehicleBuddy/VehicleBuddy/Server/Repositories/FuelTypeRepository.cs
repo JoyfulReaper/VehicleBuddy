@@ -30,7 +30,7 @@ namespace VehicleBuddy.Server.Repositories.Interfaces
         {
             using IDbConnection connection = _dbConnectionFactory.CreateConnection();
 
-            FuelType fuelType = await connection.QuerySingleAsync<FuelType>("spFuelType_Get", fuelTypeId, commandType: CommandType.StoredProcedure);
+            FuelType fuelType = await connection.QuerySingleOrDefaultAsync<FuelType>("spFuelType_Get", new { fuelTypeId  = fuelTypeId }, commandType: CommandType.StoredProcedure);
             return fuelType;
         }
 
@@ -46,7 +46,7 @@ namespace VehicleBuddy.Server.Repositories.Interfaces
         public async Task DeleteAsync(int fuelTypeId)
         {
             using IDbConnection connection = _dbConnectionFactory.CreateConnection();
-            await connection.ExecuteAsync("spFuelType_Delete", fuelTypeId, commandType: CommandType.StoredProcedure);
+            await connection.ExecuteAsync("spFuelType_Delete", new { fuelTypeId = fuelTypeId }, commandType: CommandType.StoredProcedure);
         }
     }
 }
