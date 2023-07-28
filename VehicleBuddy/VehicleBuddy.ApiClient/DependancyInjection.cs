@@ -1,13 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VehicleBuddy.ApiClient.Common.Options;
 using VehicleBuddy.ApiClient.HttpClients;
-
 
 namespace VehicleBuddy.ApiClient;
 
@@ -22,7 +16,5 @@ public static class DependancyInjection
         //services.AddHttpClient<IVehicleClient, VehicleClient>();
 
         return services;
-
     }
-
 }

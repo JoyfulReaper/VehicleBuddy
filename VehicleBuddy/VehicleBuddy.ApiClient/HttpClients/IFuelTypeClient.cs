@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VehicleBuddy.Shared.Contracts.Fuel;
-using VehicleBuddy.Shared.Contracts.Vehicle;
+﻿using VehicleBuddy.Shared.Contracts.Fuel;
 
 namespace VehicleBuddy.ApiClient.HttpClients
 {
@@ -16,7 +10,7 @@ namespace VehicleBuddy.ApiClient.HttpClients
         Task<FuelTypeResponse> UpdateAsync(UpdateFuelTypeRequest fuelTypeRequest, CancellationToken cancellationToken = default);
 
         Task<FuelTypeResponse> CreateAsync(CreateFuelTypeRequest fuelTypeRequest, CancellationToken cancellationToken = default);
-        Task<FuelTypeResponse> DeleteAsync(int id, CancellationToken cancellationToken = default);
+        Task DeleteAsync(int id, CancellationToken cancellationToken = default);
 
     }
 }
