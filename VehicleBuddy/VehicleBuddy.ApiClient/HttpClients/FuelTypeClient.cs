@@ -32,12 +32,6 @@ namespace VehicleBuddy.ApiClient.HttpClients
             return result;
         }
 
-        public async Task DeleteAsync(int id, CancellationToken cancellationToken = default)
-        {
-            using var response = await _client.DeleteAsync(_client.BaseAddress + $"FuelType/{id}", cancellationToken);
-            response.EnsureSuccessStatusCode();
-        }
-
         public async Task<List<FuelTypeResponse>> GetAllAsync(CancellationToken cancellationToken = default)
         {
             var response = await _client.GetFromJsonAsync<List<FuelTypeResponse>>(_client.BaseAddress + "FuelType/", cancellationToken);
@@ -56,6 +50,12 @@ namespace VehicleBuddy.ApiClient.HttpClients
             response.EnsureSuccessStatusCode();
             var result = await response.Content.ReadFromJsonAsync<FuelTypeResponse>();
             return result;
+        }
+
+        public async Task DeleteAsync(int id, CancellationToken cancellationToken)
+        {
+            using var response = await _client.DeleteAsync(_client.BaseAddress + $"FuelType/{id}", cancellationToken);
+            response.EnsureSuccessStatusCode();
         }
     }
 }

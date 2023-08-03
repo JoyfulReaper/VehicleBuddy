@@ -13,7 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\VehicleBuddy\Server\VehicleBuddy.Server.csproj" />
     <ProjectReference Include="..\VehicleBuddy\Shared\VehicleBuddy.Shared.csproj" />
   </ItemGroup>
 

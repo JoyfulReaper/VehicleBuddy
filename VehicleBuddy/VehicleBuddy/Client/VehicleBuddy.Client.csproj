@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\VehicleBuddy.ApiClient\VehicleBuddy.ApiClient.csproj" />
     <ProjectReference Include="..\Shared\VehicleBuddy.Shared.csproj" />
   </ItemGroup>
 
