@@ -1,0 +1,27 @@
+﻿@if (Vehicle is not null)
+{
+    <div class="vb-card">
+        <img src="https://i.pravatar.cc/400" />
+        <h3>@Vehicle.Year @Vehicle.Make.Name @Vehicle.Model.Name</h3>
+        <span class="price">{price}</span>
+        <span class="color">@Vehicle.Color</span>
+        <span class="mileage">@Vehicle.Mileage</span>
+        <span class="cylinders">@Vehicle.Package.NumberOfCylinders</span>
+        <span class="fueltype">@Vehicle.Package.FuelType.Type</span>
+    </div>
+}
+
+
+
+
+@code {
+
+    [Parameter, EditorRequired]
+    public VehicleResponse Vehicle { get; set; } = default!;
+
+
+    protected override void OnParametersSet()
+    {
+        var test = Vehicle;    
+    }
+}
