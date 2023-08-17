@@ -1,7 +1,41 @@
-﻿@page "/"
+﻿@inject IVehicleClient _vehicleClient
+@page "/"
 
-<PageTitle>Index</PageTitle>
+<PageTitle>All Cars</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1>Check out our vehicles!</h1>
 
-Welcome to your new app.
+<VehicleCard Vehicle=@allVehicles.First()/>
+
+
+@*<table>
+    <thead>
+        <tr>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Color</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var vehicle in allVehicles)
+        {
+            <tr>
+                <td>@vehicle.Make.Name</td>
+                <td>@vehicle.Model.Name</td>
+                <td>@vehicle.Year</td>
+                <td>@vehicle.Color</td>
+            </tr>
+        }
+    </tbody>
+</table>*@
+
+
+@code {
+    private List<VehicleResponse> allVehicles = new List<VehicleResponse>();
+
+    protected async override Task OnInitializedAsync()
+    {
+        allVehicles = await _vehicleClient.GetAllAsync();
+    }
+}
